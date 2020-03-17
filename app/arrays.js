@@ -4,6 +4,8 @@
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
+  arr.push(arr.shift())
+  return arr
 }
 
 
@@ -16,6 +18,7 @@ function rearranger(arr) {
 // output: 42
 
 function largestNum(arr) {
+    return Math.max.apply(Math,arr)
 }
 
 
@@ -28,6 +31,12 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let sum = 0
+    for(let i = 0; i < arr.length; i++){
+        sum+= arr[i]
+        sum*= arr.length
+    }
+    return sum
 }
 
 
@@ -41,7 +50,7 @@ function elemsTimesLength(arr) {
 // Primitive data types - https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 
 function arrayFlattener(arr) {
-
+    
 }
 
 
@@ -76,6 +85,7 @@ let flights = [{
 
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
+
 
 }
 
@@ -124,4 +134,10 @@ let theBand = {
 }
 
 function bandMemberDetails(name) {
+    let member = theBand.members.find(name)
+    let inst = theBand.members.find(instrument)
+
+    return `"${member} is in the band and plays the ${inst}"`
+
+    console.log(member + inst)
 }
